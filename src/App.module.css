@@ -1,0 +1,25 @@
+.container {
+  margin: auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: right;
+  font-family: 'Exchange', Georgia, serif;
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.titleContacts {
+  text-align: right;
+  font-family: 'Exchange', Georgia, serif;
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.phonebook {
+  width: 50%;
+  padding-top: 30px;
+}
