@@ -30,7 +30,18 @@ class App extends Component {
     contacts:[contact, ...prevState.contacts]}))
    };
 
-   
+   componentDidMount() {
+     const contacts = localStorage.getItem('contacts')
+     const parseContacts = JSON.parse(contacts);
+     this.setState({contacts: parseContacts
+     })
+     
+   }
+   componentDidUpdate(prevProps, prevState) {
+     if(this.state.contacts !== prevState.contacts) {
+       localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
+     }
+   }
 
    getVisibleContacts = () => {
     const {contacts, filter} =this.state;
@@ -70,7 +81,6 @@ class App extends Component {
           resetFilter={this.resetFiler}
           onChangeName={this.handleChangeName}
           />
-          {/* <p> Total contacts: {countContacts}</p> */}
           <ContactList 
           contacts={visibleContacts} 
           onDeleteContact={this.deleteContact}
